@@ -1,0 +1,38 @@
+.header {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__navLeft {
+  display: flex;
+}
+
+.header__center {
+  display: flex;
+}
+
+.header__logo {
+  width: 150px;
+  object-fit: contain;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__navRight {
+  display: flex;
+  align-items: center;
+}
+
+.header__link {
+  display: flex;
+
+  text-decoration: none;
+  color: black;
+  padding: 15px 15px 15px 15px;
+  font-weight: bold;
+}

@@ -1,0 +1,9 @@
+.stores {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stores__img {
+  width: 100%;
+}
