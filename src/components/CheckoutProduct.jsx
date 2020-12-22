@@ -11,7 +11,7 @@ function CheckoutProduct(props) {
     });
   }
 
-  // const handleAddQty = () => {
+  // const handleAddQty = (id) => {
   //   addQuantity({
   //     id: props.id,
   //   });
