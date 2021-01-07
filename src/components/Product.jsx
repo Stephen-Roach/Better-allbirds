@@ -1,17 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
+
 import './Product.css';
-import { addToCart } from '../redux/Cart/cart-actions';
 
 function Product(props) {
-  function handleSubmit() {
-    props.addToCart({
-      id: props.id,
-      title: props.title,
-      subTitle: props.subTitle,
-      price: props.price,
-      image: props.image,
-    });
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.addItem(props.id);
   }
 
   return (
@@ -38,8 +32,4 @@ function Product(props) {
   );
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  addToCart: (id) => dispatch(addToCart(id)),
-});
-
-export default connect(null, mapDispatchToProps)(Product);
+export default Product;

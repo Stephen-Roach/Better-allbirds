@@ -1,32 +1,55 @@
 import * as actionTypes from './cart-types';
+import store from '../store';
 
 //This will add an item
-export const addToCart = (product) => {
+export const addToCart = (id) => {
+  const cart = store.getState().cart.items;
+  const itemTotal = store.getState().dataLayer.find((item) => id === item.id)
+    .price;
   return {
     type: actionTypes.ADD_TO_CART,
-    payload: product,
+    id,
+    itemTotal,
+    cart,
   };
 };
-//This will remove an item completely
-export const removeFromCart = (product) => {
-  return {
-    type: actionTypes.REMOVE_FROM_CART,
-    payload: product,
-  };
-};
+
 //This will subtract the quantity of an item
-export const subtractQuantity = (id) => {
+export const subQuantity = (id) => {
+  const cart = store.getState().cart.items;
+  const itemTotal = store.getState().dataLayer.find((item) => id === item.id)
+    .price;
   return {
     type: actionTypes.SUB_QUANTITY,
     id,
+    cart,
+    itemTotal,
   };
 };
 
 //This will add the quantity of a single item
-export const addQuantity = (product) => {
+export const addQuantity = (id) => {
+  const cart = store.getState().cart.items;
+  const itemTotal = store.getState().dataLayer.find((item) => id === item.id)
+    .price;
   return {
     type: actionTypes.ADD_QUANTITY,
-    payload: product,
+    id,
+    cart,
+    itemTotal,
+  };
+};
+
+//This will remove an item completely
+export const removeFromCart = (id) => {
+  const cart = store.getState().cart.items;
+  const itemTotal = store.getState().dataLayer.find((item) => id === item.id)
+    .price;
+  return {
+    type: actionTypes.REMOVE_FROM_CART,
+    id,
+    cart,
+    itemTotal,
   };
 };
 

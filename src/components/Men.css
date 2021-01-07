@@ -8,6 +8,7 @@
 
 .mens__productColumn {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-top: 20px;
   padding-bottom: 40px;

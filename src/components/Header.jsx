@@ -4,20 +4,20 @@ import './Header.css';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCartOutlined';
 import HelpIcon from '@material-ui/icons/HelpOutlineOutlined';
 import UserIcon from '@material-ui/icons/PermIdentityOutlined';
-
 import { connect } from 'react-redux';
 
-function Header({ cart }) {
+function Header({ items }) {
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     let count = 0;
-    cart.forEach((item) => {
+    console.log(items);
+    items.forEach((item) => {
       count++;
     });
 
     setCartCount(count);
-  }, [cart, cartCount]);
+  }, [items, cartCount]);
 
   return (
     <nav className='header'>
@@ -68,7 +68,7 @@ function Header({ cart }) {
 
 const mapStateToProps = (state) => {
   return {
-    cart: state.cart.cart,
+    items: state.cart.items,
   };
 };
 

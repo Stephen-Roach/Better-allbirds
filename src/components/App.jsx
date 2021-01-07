@@ -7,9 +7,22 @@ import Women from './Women';
 import Checkout from './Checkout';
 import Stores from './Stores';
 import Help from './Help';
+import firebase from 'firebase';
 import './App.css';
 
 function App() {
+  const firebaseApp = {
+    apiKey: 'AIzaSyDyZj42__jSe0d2m2J0kICc93M4l9tej8c',
+    authDomain: 'allbirds-clone-35d9a.firebaseapp.com',
+    projectId: 'allbirds-clone-35d9a',
+    storageBucket: 'allbirds-clone-35d9a.appspot.com',
+    messagingSenderId: '467717910376',
+    appId: '1:467717910376:web:1bd2c4a5a3ffdb748170dd',
+    measurementId: 'G-E68W3SKW8N',
+  };
+
+  firebase.initializeApp(firebaseApp);
+
   return (
     <Router>
       <div className='App'>
